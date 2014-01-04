@@ -1,0 +1,186 @@
+﻿<table class="table table-bordered">
+    <tr class="well">
+        <td class="tdLeft">
+            Sno
+        </td>
+        <td class="tdLeft">
+            Description
+        </td>
+        <td class="tdLeft">
+            Execution
+        </td>
+    </tr>
+    <tr class="well">
+        <td class="tdLeft">
+            {{id+1}}
+        </td>
+        l
+        <td class="tdLeft">
+            Simple Angular JS
+            <h6>
+                adding ng-app will evaluate the Xpression</h6>
+            <h6>
+                Similar functions ng-cloak,ng-bind</h6>
+        </td>
+        <td class="tdLeft">
+            <span ng-non-bindable>{{3+5}} Equals </span>{{3+5}}
+        </td>
+    </tr>
+    <tr class="well">
+        <td class="tdLeft">
+            {{id+2}}
+        </td>
+        <td class="tdLeft">
+            Binding a Text input to an Xpression 
+            <h6>
+                "No DOM Manipulation like $(document).ready(function() { $("input").keypress(function() { $("#name").text($(this).val());
+                }); })"</h6>
+        </td>
+        <td class="tdLeft">
+            <input type="text" ng-model="name" />
+            <h6>
+                {{greeting()}}</h6>
+        </td>
+    </tr>
+    <tr class="well">
+        <td class="tdLeft">
+            {{id+3}}
+        </td>
+        <td class="tdLeft">
+            Responding to click events using controllers
+            <h6>
+                Binded with visible boolean scope variable</h6>
+            <td class="tdLeft">
+                <button class="btn" type="button" ng-click="toggle()" id="toggle" value="Toggle Me" />
+                <p ng-show="visible">
+                    Hello World !</p>
+            </td>
+        </td>
+    </tr>
+    <tr class="well">
+        <td class="tdLeft">
+            {{id+4}}
+        </td>
+        <td class="tdLeft">
+        Convert Expression Output with filters
+        </td>
+        <td class="tdLeft">
+        <span ng-non-bindable >{{"Filter" | uppercase }} Equals </span>{{"Filter" | uppercase }}
+        </td>
+    </tr>
+
+      <tr class="well">
+        <td class="tdLeft">
+            {{id+5}}
+        </td>
+        <td class="tdLeft">
+        Custom HTML element with directive
+        <h6>"show='visible'</h6>
+        <h6>app.directive("atrname",fnEwRO with link fn(scope,element,attributes){scope.$watch(attributes.show,fnvalue element.css('display',value?'':'none');}"</h6>
+        <h6>$watch - service which provides fn callback when variable value changes to automatically detect the changes. link fn defines directive behaviour</h6>
+        </td>
+        <td class="tdLeft">
+         <label for="checkbox"> 
+         <input id="checkbox" type="checkbox" ng-model="visible">Toggle me 
+          </label> 
+           <div show="visible"> <p>Hello World</p> </div> 
+        </td>
+    </tr>    
+    
+      <tr class="well">
+        <td class="tdLeft">
+            {{id+5}}
+        </td>
+        <td class="tdLeft">
+        Controllers - provides BL to handle view behaviour.it prepares the model for view template.
+        </td>
+        <td class="tdLeft">
+        Benefits
+        <h6>DOM manipulation should not be done in controllerit helps UT </h6>
+        <h6>Assign default value inside controller</h6>
+        <h6>Encapsulate scope variable withing fn like getincrement() to reduce accessing from template.</h6>
+        </td>
+    </tr>
+          <tr class="well">
+        <td class="tdLeft">
+            {{id+6}}
+        </td>
+        <td class="tdLeft">
+        Responding to scope changes
+        </td>
+        <td class="tdLeft">
+        <input type="text" placeholder="Enter some value" ng-model="someValue" />
+        <h6><p>{{changes}}</p></h6>
+        </td>
+    </tr>
+
+              <tr class="well">
+        <td class="tdLeft">
+            {{id+7}}
+        </td>
+        <td class="tdLeft">
+        Parentcontroller -->name,object.name
+           <br />Nestedcontroller-->name*,$parent.name,object.name .
+           <h6>* child variable changes, copy will be created.</h6>
+
+        </td>
+        <td class="tdLeft">
+        In Angular, a scope prototypically inherits properties from a parent scope.Objects are therefore references and 
+        kept in sync.Whereas primitive types are only in sync as long they are not changed in the child scope.
+        </td>
+    </tr>
+          <tr class="well">
+        <td class="tdLeft">
+            {{id+8}}
+        </td>
+        <td class="tdLeft">
+        Sharing code between controller using service
+        <h6>Factory: singleton service</h6>
+        </td>
+        <td class="tdLeft">
+        <ul ng-repeat="user in users"> 
+         <li>{{user}}</li> 
+         </ul> 
+        <div class="nested" ng-controller="AnotherCtrl"> 
+        First user: {{firstUser}}  </div> 
+        </td>
+    </tr>
+     <tr class="well">
+        <td class="tdLeft">
+            {{id+9}}
+        </td>
+        <td class="tdLeft">
+        Directives       
+        <h6>Helps to create new html elements specific to our applicaion. </h6>
+        <h6>create reusable compenents encapsulates DOM structure, css, even behaviours</h6>
+        <h6>checked variable bound to button ng-disabled</h6>
+        </td>
+        <td class="tdLeft">
+        <label for="chk"><input type="checkbox" name="chk" ng-model="checked" /> Check me</label>
+        <button class="btn" ng-disabled="checked" type="button" value="check"/>
+        </td>
+    </tr>
+     <tr class="well">
+        <td class="tdLeft">
+            {{id+10}}
+        </td>
+        <td class="tdLeft">
+        Directives       
+        <h6>Helps to create new html elements specific to our applicaion. </h6>
+        <h6>create reusable compenents encapsulates DOM structure, css, even behaviours</h6>
+        <h6>checked variable bound to button ng-disabled</h6>
+        <h6>Restriction: directive used as element(create reusable component) /attribute(enhacement options)</h6>
+        <h6>link fn defines directive behaviour</h6>
+        <h6>use "replace:true" to replace with template</h6>
+        <h6>use "template" to define html or html file.</h6>
+        </td>
+        <td class="tdLeft">
+        <my-widget> 
+         <p>Hello World</p> 
+         </my-widget>
+         <br />
+         <my-widget2></my-widget2> 
+        </td>
+    </tr>
+
+</table>
